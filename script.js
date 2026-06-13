@@ -1,29 +1,21 @@
-/* ============================================
-   KADROLLI FINANCIAL SERVICES
-   Interactive Scripts
-   ============================================ */
-
 document.addEventListener('DOMContentLoaded', () => {
 
   // --- STICKY NAV ---
   const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
-  }, { passive: true });
+  const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 60);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
   // --- HAMBURGER MENU ---
   const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
+  const navLinks  = document.getElementById('navLinks');
   hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    const spans = hamburger.querySelectorAll('span');
-    const isOpen = navLinks.classList.contains('open');
-    spans[0].style.transform = isOpen ? 'rotate(45deg) translate(5px,5px)' : '';
-    spans[1].style.opacity  = isOpen ? '0' : '1';
-    spans[2].style.transform = isOpen ? 'rotate(-45deg) translate(5px,-5px)' : '';
+    const open = navLinks.classList.toggle('open');
+    const [s0, s1, s2] = hamburger.querySelectorAll('span');
+    s0.style.transform = open ? 'rotate(45deg) translate(5px,5px)' : '';
+    s1.style.opacity   = open ? '0' : '1';
+    s2.style.transform = open ? 'rotate(-45deg) translate(5px,-5px)' : '';
   });
-
-  // Close nav on link click (mobile)
   navLinks.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       navLinks.classList.remove('open');
@@ -31,108 +23,59 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- COUNTER ANIMATION ---
-  const animateCounter = (el, target, duration = 2000) => {
-    const start = performance.now();
-    const update = (now) => {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-      el.textContent = Math.floor(eased * target);
-      if (progress < 1) requestAnimationFrame(update);
-      else el.textContent = target;
-    };
-    requestAnimationFrame(update);
-  };
-
-  const counters = document.querySelectorAll('.stat-number[data-target]');
-  let countersStarted = false;
-  const startCounters = () => {
-    if (countersStarted) return;
-    counters.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight) {
-        countersStarted = true;
-        counters.forEach(c => animateCounter(c, parseInt(c.dataset.target)));
-      }
-    });
-  };
-  window.addEventListener('scroll', startCounters, { passive: true });
-  startCounters();
-
   // --- FAQ ACCORDION ---
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      // Close all
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
       document.querySelectorAll('.faq-question').forEach(b => {
         b.setAttribute('aria-expanded', 'false');
         b.nextElementSibling.classList.remove('open');
       });
-      // Open clicked (if was closed)
-      if (!expanded) {
+      if (!isOpen) {
         btn.setAttribute('aria-expanded', 'true');
         btn.nextElementSibling.classList.add('open');
       }
     });
   });
 
-  // --- SCROLL REVEAL ---
-  const revealElements = document.querySelectorAll(
-    '.service-card, .about-card, .achievement-card, .achievement-small, .faq-item, .office-left, .office-right, .about-left, .about-right'
-  );
-
-  revealElements.forEach(el => el.classList.add('reveal'));
-
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        // Stagger delay for grids
-        const delay = (entry.target.dataset.revealDelay || 0);
-        setTimeout(() => entry.target.classList.add('visible'), delay);
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-  // Add stagger delays to grid children
-  document.querySelectorAll('.services-grid .service-card').forEach((el, i) => {
-    el.dataset.revealDelay = i * 80;
-  });
-  document.querySelectorAll('.about-card').forEach((el, i) => {
-    el.dataset.revealDelay = i * 100;
-  });
-
-  revealElements.forEach(el => revealObserver.observe(el));
-
-  // --- SMOOTH SCROLL OFFSET FOR FIXED NAV ---
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (!target) return;
-      e.preventDefault();
-      const offset = 80;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
-    });
-  });
-
-  // --- ACTIVE NAV HIGHLIGHT ---
-  const sections = document.querySelectorAll('section[id]');
-  const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
-
-  const sectionObserver = new IntersectionObserver((entries) => {
+  // --- SCROLL REVEAL (IntersectionObserver) ---
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        navAnchors.forEach(a => {
-          a.style.color = a.getAttribute('href') === '#' + entry.target.id
-            ? 'rgba(255,255,255,1)'
-            : '';
-        });
+        const delay = parseInt(entry.target.dataset.revealDelay || 0);
+        setTimeout(() => entry.target.classList.add('visible'), delay);
+        observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.4 });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
-  sections.forEach(s => sectionObserver.observe(s));
+  // Stagger grid children
+  document.querySelectorAll('.services-grid .service-card').forEach((el, i) => { el.dataset.revealDelay = i * 70; });
+  document.querySelectorAll('.why-grid .why-card').forEach((el, i)          => { el.dataset.revealDelay = i * 80; });
+  document.querySelectorAll('.process-step').forEach((el, i)                => { el.dataset.revealDelay = i * 100; });
+  document.querySelectorAll('.achievement-small').forEach((el, i)           => { el.dataset.revealDelay = i * 80; });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // --- SMOOTH SCROLL WITH NAV OFFSET ---
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id === '#') return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+    });
+  });
+
+  // --- LOGO FALLBACK ---
+  document.querySelectorAll('.nav-logo-img').forEach(img => {
+    img.addEventListener('error', () => {
+      img.style.display = 'none';
+      const fallback = img.nextElementSibling;
+      if (fallback) fallback.style.display = 'inline';
+    });
+  });
 
 });
