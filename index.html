@@ -1,116 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Praveen D. Kadrolli | Kadrolli Financial Services</title>
-<meta name="description" content="ARN Registered Mutual Fund Distributor | SIP Planning | Retirement Planning | Wealth Creation">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Praveen D. Kadrolli | Mutual Fund Distributor | Kadrolli Financial Services</title>
+  <meta name="description" content="ARN Registered Mutual Fund Distributor helping investors with SIP Planning, Retirement Planning, ELSS Tax Saving, Portfolio Review and Wealth Creation." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-<header class="navbar">
-  <div class="logo-section">
-    <img src="assets/profile.png" alt="Logo" height="50">
-    <span>Kadrolli Financial Services</span>
-  </div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#office">Office</a>
-    <a href="#contact">Contact</a>
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">
+        <span class="nav-logo-icon">◆</span>
+        <span class="nav-brand-text">Kadrolli Financial</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#office">Office</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact" class="nav-cta">Book Consultation</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
-</header>
 
-<section id="home" class="hero">
-  <div class="hero-content">
-    <div class="hero-text">
-      <h1>Praveen D. Kadrolli</h1>
-      <h2>ARN Registered Mutual Fund Distributor (ARN 290531)</h2>
-      <p class="tagline">Simplifying Investments. Maximizing Peace of Mind.</p>
-      <p>Helping individuals and families build long-term wealth through SIPs, retirement planning, tax-saving investments and goal-based investing.</p>
-
-      <div class="stats">
-        <div class="stat-box"><h3>190+</h3><p>Clients Served</p></div>
-        <div class="stat-box"><h3>4+</h3><p>Years Experience</p></div>
-        <div class="stat-box"><h3>100%</h3><p>Client Focused</p></div>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        ARN No. 290531 &nbsp;·&nbsp; Kotak Connect Plus Partner
       </div>
-
-      <a class="btn-primary" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdw6Il81h2hDoCXSCGqp_SbOpz471qbJJNhgpjjmZWaCmSA0Q/viewform">Book Free Consultation</a>
-      <a class="btn-secondary" target="_blank" href="https://wa.me/918147011325?text=Hello%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20mutual%20fund%20investment%20options">WhatsApp Now</a>
+      <h1 class="hero-title">
+        Simplifying<br />
+        <span class="hero-title-accent">Investments.</span><br />
+        Maximizing Peace of Mind.
+      </h1>
+      <p class="hero-subtitle">
+        Helping individuals and families build lasting wealth through smart SIP planning,
+        retirement planning, and goal-based financial strategies.
+      </p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-number" data-target="190">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Clients Served</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-number" data-target="4">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-number-text">100%</span>
+          <span class="stat-label">Personalized</span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdw6Il81h2hDoCXSCGqp_SbOpz471qbJJNhgpjjmZWaCmSA0Q/viewform" target="_blank" class="btn btn-primary">Book Free Consultation</a>
+        <a href="https://wa.me/918147011325?text=Hello%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20mutual%20fund%20investment%20options." target="_blank" class="btn btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Now
+        </a>
+      </div>
     </div>
-
-    <div class="hero-image">
-      <img src="assets/profile.jpg" alt="Praveen Kadrolli">
+    <div class="hero-scroll-hint">
+      <span>Scroll to explore</span>
+      <div class="scroll-arrow"></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="trust-bar">
-  <div class="trust-grid">
-    <div>✓ ARN Registered</div>
-    <div>✓ Kotak Connect Plus Partner</div>
-    <div>✓ 190+ Investors Served</div>
-    <div>✓ Physical Office</div>
-    <div>✓ Personalized Guidance</div>
-  </div>
-</section>
+  <!-- TRUST BAR -->
+  <section class="trust-bar">
+    <div class="trust-ticker">
+      <div class="trust-track">
+        <span>✓ ARN Registered Distributor</span>
+        <span>✓ Kotak Connect Plus Partner</span>
+        <span>✓ 190+ Investors Served</span>
+        <span>✓ Physical Office in Bailhongal</span>
+        <span>✓ Personalized Financial Planning</span>
+        <span>✓ Transparent & Ethical Practices</span>
+        <span>✓ ARN Registered Distributor</span>
+        <span>✓ Kotak Connect Plus Partner</span>
+        <span>✓ 190+ Investors Served</span>
+        <span>✓ Physical Office in Bailhongal</span>
+        <span>✓ Personalized Financial Planning</span>
+        <span>✓ Transparent & Ethical Practices</span>
+      </div>
+    </div>
+  </section>
 
-<section id="about">
-<h2>About</h2>
-<p>
-Founder of Kadrolli Financial Services. With 4+ years of market experience and 190+ investors served,
-I help clients achieve financial goals through disciplined investing, portfolio reviews and long-term wealth creation.
-</p>
-</section>
+  <!-- ABOUT -->
+  <section class="section section-light" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left">
+          <div class="eyebrow">About</div>
+          <h2 class="section-title">A trusted partner<br />for your financial journey.</h2>
+          <p class="section-body">
+            I am Praveen D. Kadrolli, Founder of Kadrolli Financial Services and an ARN Registered
+            Mutual Fund Distributor based in Bailhongal, Karnataka.
+          </p>
+          <p class="section-body">
+            With over four years of equity market experience and a growing network of 190+ investors,
+            I help individuals and families achieve their financial goals through disciplined investing
+            and personalized financial planning.
+          </p>
+          <p class="section-body">
+            My philosophy is simple: understand your goals, evaluate your risk profile, and build
+            long-term wealth through suitable investment solutions — with full transparency at every step.
+          </p>
+          <div class="about-tags">
+            <span class="tag">ARN No. 290531</span>
+            <span class="tag">Kotak Connect Plus</span>
+            <span class="tag">Bailhongal, Karnataka</span>
+          </div>
+        </div>
+        <div class="about-right">
+          <div class="about-card-grid">
+            <div class="about-card">
+              <div class="about-card-icon">◆</div>
+              <div class="about-card-num">190+</div>
+              <div class="about-card-label">Investors Trusted</div>
+            </div>
+            <div class="about-card">
+              <div class="about-card-icon">◈</div>
+              <div class="about-card-num">4+</div>
+              <div class="about-card-label">Years in Markets</div>
+            </div>
+            <div class="about-card about-card-wide">
+              <div class="about-card-icon">⬡</div>
+              <div class="about-card-label-main">Goal-Focused Planning</div>
+              <div class="about-card-desc">Every investment is mapped to a real life milestone — retirement, education, home, or freedom.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="services">
-<h2>Services</h2>
-<div class="services-grid">
-<div class="service-card"><h3>SIP Planning</h3></div>
-<div class="service-card"><h3>Retirement Planning</h3></div>
-<div class="service-card"><h3>Goal Based Investing</h3></div>
-<div class="service-card"><h3>ELSS Tax Saving</h3></div>
-<div class="service-card"><h3>Portfolio Review</h3></div>
-<div class="service-card"><h3>Wealth Creation</h3></div>
-</div>
-</section>
+  <!-- SERVICES -->
+  <section class="section section-dark" id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow eyebrow-light">Services</div>
+        <h2 class="section-title section-title-light">Everything you need<br />to grow your wealth.</h2>
+        <p class="section-subtitle-light">Personalized solutions built around your life — not just your money.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" data-index="01">
+          <div class="service-icon">📈</div>
+          <h3 class="service-title">SIP Planning</h3>
+          <p class="service-desc">Build wealth systematically through disciplined monthly investments that compound powerfully over time.</p>
+        </div>
+        <div class="service-card" data-index="02">
+          <div class="service-icon">🏡</div>
+          <h3 class="service-title">Retirement Planning</h3>
+          <p class="service-desc">Create a secure retirement corpus and achieve true financial independence — on your own terms and timeline.</p>
+        </div>
+        <div class="service-card" data-index="03">
+          <div class="service-icon">🎯</div>
+          <h3 class="service-title">Goal-Based Investing</h3>
+          <p class="service-desc">Plan investments for education, home purchase, marriage and every major life milestone ahead.</p>
+        </div>
+        <div class="service-card" data-index="04">
+          <div class="service-icon">💰</div>
+          <h3 class="service-title">ELSS Tax Saving</h3>
+          <p class="service-desc">Save up to ₹46,800 in taxes under Section 80C while building long-term equity wealth simultaneously.</p>
+        </div>
+        <div class="service-card" data-index="05">
+          <div class="service-icon">🔍</div>
+          <h3 class="service-title">Portfolio Review</h3>
+          <p class="service-desc">Evaluate and optimize your existing investments. Identify gaps, remove underperformers, and rebalance.</p>
+        </div>
+        <div class="service-card" data-index="06">
+          <div class="service-icon">🚀</div>
+          <h3 class="service-title">Wealth Creation</h3>
+          <p class="service-desc">Long-term strategies focused on sustainable, compounding growth — because wealth is built over decades.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="achievements">
-<h2>Recognition</h2>
-<div class="achievement-container">
-<img src="assets/kotak-award.jpg" alt="Kotak Award">
-<div>
-<h3>Kotak Connect Plus Elite Partner Recognition</h3>
-<p>Recognized for contribution through SIP and Lumpsum investments.</p>
-</div>
-</div>
-</section>
+  <!-- ACHIEVEMENTS -->
+  <section class="section section-light" id="achievements">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">Achievements</div>
+        <h2 class="section-title">Recognition that reflects<br />trust earned over time.</h2>
+      </div>
+      <div class="achievements-row">
+        <div class="achievement-card achievement-featured">
+          <div class="achievement-badge">★ Elite Partner</div>
+          <h3 class="achievement-title">Kotak Connect Plus<br />Elite Partner Recognition</h3>
+          <p class="achievement-desc">Recognized by Kotak Connect Plus for outstanding contribution through SIP and Lumpsum investments — a distinction earned through consistent client outcomes.</p>
+        </div>
+        <div class="achievement-side">
+          <div class="achievement-small">
+            <div class="achievement-small-num">190+</div>
+            <div class="achievement-small-label">Clients Served</div>
+          </div>
+          <div class="achievement-small achievement-small-dark">
+            <div class="achievement-small-icon">🏅</div>
+            <div class="achievement-small-label">ARN Registered<br />Distributor</div>
+          </div>
+          <div class="achievement-small">
+            <div class="achievement-small-icon">🤝</div>
+            <div class="achievement-small-label">Trusted Financial<br />Partner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="office">
-<h2>Visit Our Office</h2>
-<div class="office-gallery">
-<img src="assets/office1.jpg" alt="Office Exterior">
-<img src="assets/office2.jpg" alt="Office Interior">
-</div>
-<p>Uppin Khoot, Bazar Road, Bailhongal, Karnataka 591102</p>
-<a class="btn-primary" target="_blank" href="https://maps.app.goo.gl/fZCGY92ayznLpC8s5">Get Directions</a>
-</section>
+  <!-- OFFICE -->
+  <section class="section section-dark" id="office">
+    <div class="container">
+      <div class="office-grid">
+        <div class="office-left">
+          <div class="eyebrow eyebrow-light">Office</div>
+          <h2 class="section-title section-title-light">A real office.<br />A real advisor.</h2>
+          <p class="section-body section-body-light">
+            Meet in person at our Bailhongal office. Walk in or book an appointment — we are always ready to have an honest conversation about your financial future.
+          </p>
+          <div class="office-address">
+            <div class="office-address-line">
+              <span class="office-label">Address</span>
+              <span>Uppin Khoot, Bazar Road,<br />Bailhongal, Karnataka – 591102</span>
+            </div>
+            <div class="office-address-line">
+              <span class="office-label">Phone</span>
+              <span><a href="tel:+918147011325" class="office-link">+91 81470 11325</a></span>
+            </div>
+            <div class="office-address-line">
+              <span class="office-label">Email</span>
+              <span><a href="mailto:praveenkadrolli97@gmail.com" class="office-link">praveenkadrolli97@gmail.com</a></span>
+            </div>
+          </div>
+          <a href="https://maps.app.goo.gl/fZCGY92ayznLpC8s5" target="_blank" class="btn btn-primary">Get Directions →</a>
+        </div>
+        <div class="office-right">
+          <div class="office-map-placeholder">
+            <div class="map-pin-anim">
+              <div class="map-pin"></div>
+              <div class="map-pin-ring"></div>
+            </div>
+            <div class="map-text">Bailhongal, Karnataka</div>
+            <div class="map-sub">591102</div>
+            <a href="https://maps.app.goo.gl/fZCGY92ayznLpC8s5" target="_blank" class="map-open-btn">Open in Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="contact">
-<h2>Contact</h2>
-<p><strong>Phone:</strong> +91 81470 11325</p>
-<p><strong>Email:</strong> praveenkadrolli97@gmail.com</p>
-<p><strong>Address:</strong> Uppin Khoot, Bazar Road, Bailhongal, Karnataka 591102</p>
-<a class="btn-primary" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdw6Il81h2hDoCXSCGqp_SbOpz471qbJJNhgpjjmZWaCmSA0Q/viewform">Fill Consultation Form</a>
-</section>
+  <!-- FAQ -->
+  <section class="section section-light" id="faq">
+    <div class="container container-narrow">
+      <div class="section-header">
+        <div class="eyebrow">FAQ</div>
+        <h2 class="section-title">Questions you probably<br />already have.</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What is SIP and how does it work?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>SIP (Systematic Investment Plan) is a disciplined way to invest a fixed amount regularly — monthly or weekly — into mutual funds. It helps you build wealth over time by averaging the cost of investment and benefiting from the power of compounding, without worrying about market timing.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I start investing with a small amount?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. SIPs can begin with as little as ₹500 per month. The key is to start early and stay consistent. Even modest amounts invested regularly can grow significantly over a 10–15 year horizon thanks to the magic of compounding.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Why should I invest through mutual funds?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Mutual funds give you access to a diversified portfolio managed by professional fund managers — without needing deep market expertise yourself. They spread risk across many assets, are regulated by SEBI, and offer options for every risk appetite and financial goal.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How often should I review my portfolio?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>At least once a year, or whenever your financial situation or goals change significantly — like a new job, marriage, child, or major expense. Regular reviews help ensure your investments stay aligned with your evolving life goals.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can mutual funds help with retirement planning?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes — mutual funds, especially equity-oriented ones, are among the most effective long-term wealth creation tools available. A well-structured retirement SIP started in your 30s can accumulate a significant corpus by the time you retire, often outpacing traditional instruments.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What is ELSS and how does it save tax?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>ELSS (Equity Linked Savings Scheme) is a mutual fund category that qualifies for tax deduction under Section 80C of the Income Tax Act. You can invest up to ₹1.5 lakh per year and claim deductions, potentially saving up to ₹46,800 in taxes — while also growing your money in equity markets. It has the shortest lock-in period (3 years) among all 80C options.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<a class="whatsapp-float" target="_blank" href="https://wa.me/918147011325?text=Hello%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20mutual%20fund%20investment%20options">WhatsApp</a>
+  <!-- CONTACT -->
+  <section class="section section-contact" id="contact">
+    <div class="hero-glow hero-glow-1" style="top:10%;left:20%"></div>
+    <div class="hero-glow hero-glow-2" style="top:60%;right:15%"></div>
+    <div class="container container-narrow">
+      <div class="contact-block">
+        <div class="eyebrow eyebrow-light">Contact</div>
+        <h2 class="section-title section-title-light">Ready to start your<br />wealth journey?</h2>
+        <p class="section-body section-body-light">Book a free, no-obligation consultation. Let's talk about your goals and build a plan together.</p>
+        <div class="contact-actions">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdw6Il81h2hDoCXSCGqp_SbOpz471qbJJNhgpjjmZWaCmSA0Q/viewform" target="_blank" class="btn btn-primary btn-lg">Fill Consultation Form</a>
+          <a href="https://wa.me/918147011325?text=Hello%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20mutual%20fund%20investment%20options." target="_blank" class="btn btn-outline-light btn-lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Now
+          </a>
+          <a href="tel:+918147011325" class="btn btn-outline-light btn-lg">📞 Call Now</a>
+        </div>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <span>📍</span>
+            <span>Uppin Khoot, Bazar Road, Bailhongal, Karnataka – 591102</span>
+          </div>
+          <div class="contact-detail">
+            <span>✉️</span>
+            <a href="mailto:praveenkadrolli97@gmail.com" class="contact-link">praveenkadrolli97@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer>
-<p>© Kadrolli Financial Services | ARN 290531</p>
-</footer>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="nav-logo-icon">◆</span>
+          <span class="footer-brand-name">Kadrolli Financial Services</span>
+        </div>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#achievements">Achievements</a>
+          <a href="#office">Office</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-disclaimer">
+          <strong>Disclaimer:</strong> Mutual Fund investments are subject to market risks. Please read all scheme related documents carefully before investing.
+        </div>
+        <div class="footer-legal">
+          <span>ARN No. 290531</span>
+          <span>·</span>
+          <span>© 2025 Kadrolli Financial Services. All Rights Reserved.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-<script src="script.js"></script>
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/918147011325?text=Hello%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20mutual%20fund%20investment%20options." target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
 </body>
 </html>
